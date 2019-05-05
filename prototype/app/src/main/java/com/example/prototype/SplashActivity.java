@@ -8,9 +8,15 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class SplashActivity extends Activity {
+    //로그인 모듈 변수
+    private FirebaseAuth mAuth=FirebaseAuth.getInstance();
+    //현재 로그인 된 유저 정보 담을 변수
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +24,7 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
 
         Handler hd = new Handler();
-        hd.postDelayed(new splashhandler(), 3000);
+        hd.postDelayed(new splashhandler(), 2000);
 
 
         ImageView image = (ImageView) findViewById(R.id.gif_image);
@@ -39,17 +45,24 @@ public class SplashActivity extends Activity {
         }
         public void run(){
             try{
-                sleep(4000);
+                sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    private class splashhandler implements Runnable {
+   public class splashhandler implements Runnable {
         public void run(){
-            startActivity(new Intent(getApplication(), LoginActivity.class));
-            SplashActivity.this.finish();
+            currentUser = mAuth.getCurrentUser();
+            if(currentUser!=null) {
+                startActivity(new Intent(getApplication(), NavigationActivity.class));
+                SplashActivity.this.finish();
+            }
+            else{
+                startActivity(new Intent(getApplication(), LoginActivity.class));
+                SplashActivity.this.finish();
+            }
         }
     }
 

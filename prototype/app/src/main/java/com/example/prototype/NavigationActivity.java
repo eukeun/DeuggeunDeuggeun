@@ -16,12 +16,20 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +40,33 @@ public class NavigationActivity extends AppCompatActivity
     List<Drawable> temp;
     Button button;
 
+    //로그인 모듈 변수
+    private FirebaseAuth mAuth;
+    //현재 로그인 된 유저 정보 담을 변수
+    private FirebaseUser currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+        Log.d("a","//NavigationActivity Start");
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+////로그아웃 버튼
+        NavigationView navigationView3 = (NavigationView) findViewById(R.id.nav_view);
+        navigationView3.setNavigationItemSelectedListener(this);
+        View nav_header_view = navigationView3.getHeaderView(0);
 
+        ImageButton nav_header_logout_button = (ImageButton) nav_header_view.findViewById(R.id.ImageButton_logout);
+        nav_header_logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        /////
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,6 +190,21 @@ public class NavigationActivity extends AppCompatActivity
     }
 
     @Override
+    public void onStart(){
+        //Log.d("a","LoginActivity 실행//3");
+        super.onStart();
+        currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null){
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+            View nav_header_view = navigationView.getHeaderView(0);
+
+            TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.TextView_User);
+            nav_header_id_text.setText(currentUser.getEmail());
+        }
+    }
+
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -252,9 +297,6 @@ public class NavigationActivity extends AppCompatActivity
 
 
     }
-
-
-
 }
 
 
