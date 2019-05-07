@@ -24,7 +24,7 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
 
         Handler hd = new Handler();
-        hd.postDelayed(new splashhandler(), 2000);
+        hd.postDelayed(new splashhandler(), 4000);
 
 
         ImageView image = (ImageView) findViewById(R.id.gif_image);
@@ -45,7 +45,7 @@ public class SplashActivity extends Activity {
         }
         public void run(){
             try{
-                sleep(3000);
+                sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
