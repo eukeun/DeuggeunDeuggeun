@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,10 +20,15 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class JoinActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -70,10 +78,34 @@ public class JoinActivity extends AppCompatActivity {
                             currentUser = mAuth.getCurrentUser();
 
                             Toast.makeText(JoinActivity.this, "가입 성공  " + name + currentUser.getEmail() + "/" + currentUser.getUid() ,Toast.LENGTH_SHORT).show();
-
+                            addDocument(name);
                             startActivity(new Intent(JoinActivity.this, NavigationActivity.class));
                             finish();
                         }
+                    }
+                });
+    }
+
+    public void addDocument(String name) {
+        currentUser = mAuth.getCurrentUser();
+        Map<String, Object> User = new HashMap<>();
+        User.put("userName", name);
+        User.put("userEmail", currentUser.getEmail());
+        User.put("userPoint", 0);
+        User.put("userUID", currentUser.getUid());
+
+        db.collection("User").document(currentUser.getUid())
+                .set(User)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("a", "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("a", "Error writing document", e);
                     }
                 });
     }

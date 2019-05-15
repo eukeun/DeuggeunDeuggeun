@@ -18,6 +18,8 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthCredential;
@@ -27,12 +29,20 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
     private static final int RC_SIGN_IN = 10;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("a","LoginActivity 실행//1");
@@ -165,6 +175,28 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             //FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
                             Toast.makeText(LoginActivity.this, "아이디 생성완료", Toast.LENGTH_SHORT).show();
+                            currentUser = mAuth.getCurrentUser();
+                            /////////////////////////////////////////
+                            //처음 사용하는 사용자면 포인트 0으로 초기화
+                            DocumentReference docRef = db.collection("User").document(currentUser.getUid());
+                            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        DocumentSnapshot document = task.getResult();
+                                        if (document.exists()) {
+
+
+                                        } else {
+                                            addDocument();
+                                        }
+                                    } else {
+                                        Log.d("a", "get failed with ", task.getException());
+                                    }
+                                }
+                            });
+                            /////////////////////////////////////////
+
                             Intent intent = new Intent(getApplicationContext(),NavigationActivity.class);
                             startActivity(intent);
 
@@ -183,6 +215,32 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+    public void addDocument() {
+        currentUser = mAuth.getCurrentUser();
+        Map<String, Object> User = new HashMap<>();
+        User.put("userName", currentUser.getDisplayName());
+        User.put("userEmail", currentUser.getEmail());
+        User.put("userPoint", 0);
+        User.put("userUID", currentUser.getUid());
+
+        db.collection("User").document(currentUser.getUid())
+                .set(User)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("a", "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("a", "Error writing document", e);
+                    }
+                });
+    }
+    public void ReadData(){
 
     }
 }

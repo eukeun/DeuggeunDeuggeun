@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -25,8 +27,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,23 +47,47 @@ public class NavigationActivity extends AppCompatActivity
     Button button;
 
 
-    //로그인 모듈 변수
     private FirebaseAuth mAuth;
-    //현재 로그인 된 유저 정보 담을 변수
     private FirebaseUser currentUser;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        Log.d("a", "//NavigationActivity Start");
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-////로그아웃 버튼
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        final View nav_header_view = navigationView.getHeaderView(0);
+        final TextView nav_header_point_text = (TextView) nav_header_view.findViewById(R.id.textView_Point);
+        final TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.TextView_User);
+
+        if (currentUser != null) {
+            DocumentReference docRef = db.collection("User").document(currentUser.getUid());
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            nav_header_point_text.setText(document.get("userPoint").toString()+" 근");
+                            nav_header_id_text.setText(document.get("userName").toString());
+
+                        } else {
+                        }
+                    } else {
+                    }
+                }
+            });
+            ////Realtime update////
+        }
+
+        /////////////////////////////////////////////////////////////
+        ////로그아웃 버튼
         NavigationView navigationView3 = (NavigationView) findViewById(R.id.nav_view);
         navigationView3.setNavigationItemSelectedListener(this);
-        View nav_header_view = navigationView3.getHeaderView(0);
 
         ImageView point_button = (ImageView) nav_header_view.findViewById(R.id.ImageButton_point);
         point_button.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +105,7 @@ public class NavigationActivity extends AppCompatActivity
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         /////
@@ -193,24 +227,40 @@ public class NavigationActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         */
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onStart() {
-        //Log.d("a","LoginActivity 실행//3");
-        super.onStart();
-        currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-            View nav_header_view = navigationView.getHeaderView(0);
+            final View nav_header_view = navigationView.getHeaderView(0);
+            final TextView nav_header_point_text = (TextView) nav_header_view.findViewById(R.id.textView_Point);
+            final TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.TextView_User);
 
-            TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.TextView_User);
-            nav_header_id_text.setText(currentUser.getEmail());
+            super.onStart();
+            ////ReadPoint////
+            DocumentReference docRef = db.collection("User").document(currentUser.getUid());
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            nav_header_point_text.setText(document.get("userPoint").toString()+" 근");
+                            nav_header_id_text.setText(document.get("userName").toString());
+                        } else {
+                        }
+                    } else {
+                    }
+                }
+            });
         }
+        /////////////////
     }
+
 
     @Override
     public void onBackPressed() {
