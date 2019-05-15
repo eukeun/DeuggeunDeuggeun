@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,14 +26,16 @@ import java.util.List;
 public class GymActivity extends AppCompatActivity {
 
     ViewPager vp;
+    LinearLayout ll;
     List<Drawable> temp;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym);
 
-        vp = (ViewPager)findViewById(R.id.vp);
+        vp = (ViewPager) findViewById(R.id.vp);
+        ll = (LinearLayout) findViewById(R.id.ll);
         TextView tab_first = (TextView) findViewById(R.id.tab_first);
         TextView tab_second = (TextView) findViewById(R.id.tab_second);
         TextView tab_third = (TextView) findViewById(R.id.tab_third);
@@ -47,6 +50,33 @@ public class GymActivity extends AppCompatActivity {
         tab_second.setTag(1);
         tab_third.setOnClickListener(movePageListener);
         tab_third.setTag(2);
+
+        tab_first.setSelected(true);
+
+        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int i = 0;
+                while (i < 3) {
+                    if (position == i) {
+                        ll.findViewWithTag(i).setSelected(true);
+                    } else {
+                        ll.findViewWithTag(i).setSelected(false);
+                    }
+                    i++;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
         temp = new ArrayList<>();
@@ -85,27 +115,32 @@ public class GymActivity extends AppCompatActivity {
 
     }
 
-    View.OnClickListener movePageListener = new View.OnClickListener()
-    {
+
+    View.OnClickListener movePageListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v)
-        {
+        public void onClick(View v) {
             int tag = (int) v.getTag();
+            int i = 0;
+            while (i < 3) {
+                if (tag == i) {
+                    ll.findViewWithTag(i).setSelected(true);
+                } else {
+                    ll.findViewWithTag(i).setSelected(false);
+                }
+                i++;
+            }
             vp.setCurrentItem(tag);
         }
     };
 
-    private class pagerAdapter extends FragmentStatePagerAdapter
-    {
-        public pagerAdapter(android.support.v4.app.FragmentManager fm)
-        {
+    private class pagerAdapter extends FragmentStatePagerAdapter {
+        public pagerAdapter(android.support.v4.app.FragmentManager fm) {
             super(fm);
         }
+
         @Override
-        public android.support.v4.app.Fragment getItem(int position)
-        {
-            switch(position)
-            {
+        public android.support.v4.app.Fragment getItem(int position) {
+            switch (position) {
                 case 0:
                     return new GymFragment1();
                 case 1:
@@ -116,12 +151,13 @@ public class GymActivity extends AppCompatActivity {
                     return null;
             }
         }
+
         @Override
-        public int getCount()
-        {
+        public int getCount() {
             return 3;
         }
     }
+
     class FragmentAdapter extends FragmentPagerAdapter {
 
         // ViewPager에 들어갈 Fragment들을 담을 리스트
@@ -183,7 +219,6 @@ public class GymActivity extends AppCompatActivity {
         public int getCount() {
             return obj.size();
         }
-
 
     }
 

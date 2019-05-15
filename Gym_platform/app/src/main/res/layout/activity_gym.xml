@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <!--android:paddingBottom="@dimen/activity_vertical_margin"android:paddingLeft="@dimen/activity_horizontal_margin"android:paddingRight="@dimen/activity_horizontal_margin"android:paddingTop="@dimen/activity_vertical_margin" -->
@@ -38,38 +38,42 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tab_first"
-            android:layout_width="0dip"
+            android:layout_width="200px"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@drawable/tab_bg_selector"
-            android:gravity="center"
-            android:text="정보"
-            android:textColor="@drawable/tab_color_selector" />
-
-        <TextView
-            android:id="@+id/tab_second"
-            android:layout_width="0dip"
-            android:layout_height="50dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="140px"
+            android:layout_marginRight="140px"
             android:background="@drawable/tab_bg_selector"
             android:gravity="center"
             android:text="상품"
-            android:textColor="@drawable/tab_color_selector" />
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tab_second"
+            android:layout_width="200px"
+            android:layout_height="50dp"
+            android:layout_marginLeft="140px"
+            android:layout_marginRight="140px"
+            android:background="@drawable/tab_bg_selector"
+            android:gravity="center"
+            android:text="정보"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/tab_third"
-            android:layout_width="0dip"
+            android:layout_width="200px"
             android:layout_height="50dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="140px"
+            android:layout_marginRight="140px"
             android:background="@drawable/tab_bg_selector"
             android:gravity="center"
             android:text="리뷰"
-            android:textColor="@drawable/tab_color_selector" />
+            android:textColor="#000000" />
     </LinearLayout>
 
     <ScrollView
@@ -105,22 +109,30 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="76px">
 
             <Button
                 android:id="@+id/btnCall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="헬스장 이용하기" />
-
+                android:layout_width="904px"
+                android:layout_height="186px"
+                android:layout_marginLeft="61px"
+                android:layout_marginRight="54px"
+                android:background="@drawable/button"
+                android:text="헬스장 이용하기"
+                android:textColor="@drawable/clickabletext" />
 
             <Button
                 android:id="@+id/btnMessage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="실시간 톡" />
+                android:layout_width="357px"
+                android:layout_height="186px"
+                android:layout_marginRight="63px"
+
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button"
+                android:text="실시간 톡"
+                android:textColor="@drawable/clickabletext" />
+
 
         </LinearLayout>
     </LinearLayout>
