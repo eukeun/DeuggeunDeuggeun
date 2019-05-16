@@ -17,6 +17,7 @@
             android:fitsSystemWindows="true">
 
             <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collpaseBar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -92,7 +93,7 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content">
 
-                                    <include layout="@layout/fragment_gym1" />
+                                    <include layout="@layout/fragment_trainer1" />
                                 </TableRow>
                             </ScrollView>
 
@@ -101,7 +102,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <include layout="@layout/fragment_gym2" />
+                                <include layout="@layout/fragment_trainer2" />
                             </ScrollView>
 
                             <ScrollView
@@ -109,7 +110,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <include layout="@layout/fragment_gym3" />
+                                <include layout="@layout/fragment_trainer3" />
+                            </ScrollView>
+                            <ScrollView
+                                android:id="@+id/tab4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <include layout="@layout/fragment_trainer4" />
                             </ScrollView>
                         </FrameLayout>
                     </android.support.v4.widget.NestedScrollView>
@@ -142,7 +150,7 @@
                 android:layout_marginLeft="61px"
                 android:layout_marginRight="54px"
                 android:background="@drawable/button"
-                android:text="헬스장 이용하기"
+                android:text="PT 신청하기"
                 android:textColor="@drawable/clickabletext" />
 
             <Button
