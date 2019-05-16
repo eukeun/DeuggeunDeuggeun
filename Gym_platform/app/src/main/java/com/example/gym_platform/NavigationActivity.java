@@ -111,8 +111,8 @@ public class NavigationActivity extends AppCompatActivity
         /////
 
 
-        TextView tv = (TextView) findViewById(R.id.textView);
-        tv.setOnClickListener(new View.OnClickListener() {
+        TextView tvg = (TextView) findViewById(R.id.gym);
+        tvg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NavigationActivity.this, GymActivity.class);
