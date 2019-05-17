@@ -13,6 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,8 @@ public class GymActivity extends AppCompatActivity {
 
 
     List<Drawable> temp;
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +89,20 @@ public class GymActivity extends AppCompatActivity {
         tab_host.addTab(ts3);
 
         tab_host.setCurrentTab(0);
+
+        mRecyclerView = findViewById(R.id.review_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        ArrayList<reviewItem> reviewItemArrayList = new ArrayList<>();
+        reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "강상우", "좋네요", "2019/05/12"));
+        reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "노의건", "좋네요", "2019/04/22"));
+        reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "최낙범", "좋네요", "2019/04/12"));
+
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(reviewItemArrayList);
+
+        mRecyclerView.setAdapter(recyclerAdapter);
 
     }
 
