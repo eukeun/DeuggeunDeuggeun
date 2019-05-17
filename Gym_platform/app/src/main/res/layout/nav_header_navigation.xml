@@ -91,6 +91,7 @@
                 app:srcCompat="@drawable/list" />
 
             <ImageView
+                android:id="@+id/ImageButton_review"
                 android:layout_width="394px"
                 android:layout_height="394px"
                 app:srcCompat="@drawable/review" />

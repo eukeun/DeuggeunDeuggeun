@@ -86,8 +86,9 @@ public class NavigationActivity extends AppCompatActivity
 
         /////////////////////////////////////////////////////////////
         ////로그아웃 버튼
-        NavigationView navigationView3 = (NavigationView) findViewById(R.id.nav_view);
-        navigationView3.setNavigationItemSelectedListener(this);
+
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         ImageView point_button = (ImageView) nav_header_view.findViewById(R.id.ImageButton_point);
         point_button.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +109,7 @@ public class NavigationActivity extends AppCompatActivity
                 finish();
             }
         });
+
         /////
 
 
