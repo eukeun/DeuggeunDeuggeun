@@ -150,6 +150,7 @@ public class NavigationActivity extends AppCompatActivity
         int margin = (int) (dpValue * d);
 
 
+
         ArrayList<Integer> listImage1 = new ArrayList<>();
         listImage1.add(R.drawable.aa);
         listImage1.add(R.drawable.bb);
