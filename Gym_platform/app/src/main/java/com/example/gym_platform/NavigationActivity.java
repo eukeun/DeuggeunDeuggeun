@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,7 +16,6 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,9 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,24 +76,13 @@ public class NavigationActivity extends AppCompatActivity
                     }
                 }
             });
-            ////Realtime update////
         }
 
-        /////////////////////////////////////////////////////////////
-        ////로그아웃 버튼
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        ImageView point_button = (ImageView) nav_header_view.findViewById(R.id.ImageButton_point);
-        point_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(NavigationActivity.this, PayActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        /////////////////////////////////////////////////////////////
+        ////로그아웃 버튼////////////////////////////////////////////
         ImageView nav_header_logout_button = (ImageView) nav_header_view.findViewById(R.id.ImageButton_logout);
         nav_header_logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +93,32 @@ public class NavigationActivity extends AppCompatActivity
                 finish();
             }
         });
+        /////////////////////////////////////////////////////////////
+        ////포인트 버튼////////////////////////////////////////////
+        ImageView point_button = (ImageView) nav_header_view.findViewById(R.id.ImageButton_point);
+        point_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavigationActivity.this, PayActivity.class);
+                startActivity(intent);
+            }
+        });
+        /////////////////////////////////////////////////////////////
+        ////예약내역 버튼////////////////////////////////////////////
+        ImageView nav_header_reservationlist_button = (ImageView) nav_header_view.findViewById(R.id.imageButton_reservationlist);
+        nav_header_reservationlist_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NavigationActivity.this, ReservationListActivity.class);
+                startActivity(intent);
+            }
+        });
+        /////////////////////////////////////////////////////////////
+
+
+
+
+
 
         /////
 

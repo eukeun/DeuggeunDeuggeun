@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.bumptech.glide.request.target.DrawableImageViewTarget ;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,7 +28,7 @@ public class SplashActivity extends Activity {
 
 
         ImageView image = (ImageView) findViewById(R.id.gif_image);
-        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(image);
+        DrawableImageViewTarget gifImage = new DrawableImageViewTarget(image);
         Glide.with(this).load(R.drawable.splash).into(gifImage);
 
         thread_sleep sleep = new thread_sleep(this);
