@@ -3,12 +3,15 @@
     android:layout_width="150dp"
     android:layout_height="220dp"
     android:orientation="vertical"
-    android:padding="30dp">
+    android:layout_marginRight="10dp"
+    android:background="#FAFAFA"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+
+        android:background="#FAFAFA"
         android:orientation="vertical">
 
         <LinearLayout

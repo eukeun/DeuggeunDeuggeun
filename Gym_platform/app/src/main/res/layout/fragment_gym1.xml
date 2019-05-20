@@ -110,7 +110,6 @@
                 android:id="@+id/membership_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FAFAFA"
                 android:scrollbars="horizontal" />
 
         </LinearLayout>
