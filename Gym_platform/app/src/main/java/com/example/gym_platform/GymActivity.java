@@ -29,9 +29,8 @@ public class GymActivity extends AppCompatActivity {
 
 
     List<Drawable> temp;
-    RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
-
+    RecyclerView mRecyclerView1, mRecyclerView2;
+    RecyclerView.LayoutManager mLayoutManager1, mLayoutManager2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,11 +99,11 @@ public class GymActivity extends AppCompatActivity {
 
         tab_host.setCurrentTab(0);
 
-        mRecyclerView = findViewById(R.id.review_recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView1 = findViewById(R.id.review_recycler_view);
+        mRecyclerView1.setHasFixedSize(true);
+        mLayoutManager1 = new LinearLayoutManager(this);
         //((LinearLayoutManager) mLayoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);//가로로 보여주는거
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView1.setLayoutManager(mLayoutManager1);
 
         ArrayList<reviewItem> reviewItemArrayList = new ArrayList<>();
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "강상우", "좋네요", "2019/05/12"));
@@ -113,7 +112,25 @@ public class GymActivity extends AppCompatActivity {
 
         reviewAdapter reviewAdapter = new reviewAdapter(reviewItemArrayList);
 
-        mRecyclerView.setAdapter(reviewAdapter);
+        mRecyclerView1.setAdapter(reviewAdapter);
+
+
+        mRecyclerView2 = findViewById(R.id.membership_recycler_view);
+        mRecyclerView2.setHasFixedSize(true);
+        mLayoutManager2 = new LinearLayoutManager(this);
+        ((LinearLayoutManager) mLayoutManager2).setOrientation(LinearLayoutManager.HORIZONTAL);//가로로 보여주는거
+        mRecyclerView2.setLayoutManager(mLayoutManager2);
+
+        ArrayList<membershipItem> membershipItemArrayList = new ArrayList<>();
+        membershipItemArrayList.add(new membershipItem("1개월 - 7 pass", "1개월 / 7 pass", "34,300"));
+        membershipItemArrayList.add(new membershipItem("3개월 - 20 pass", "3개월 / 20 pass", "67,300"));
+        membershipItemArrayList.add(new membershipItem("6개월 - 40 pass", "6개월 / 40 pass", "95,300"));
+        membershipItemArrayList.add(new membershipItem("9개월 - 60 pass", "9개월 / 60 pass", "120,000"));
+        membershipItemArrayList.add(new membershipItem("12개월 - 80 pass", "12개월 / 80 pass", "150,000"));
+
+        membershipAdapter membershipAdapter = new membershipAdapter (membershipItemArrayList);
+
+        mRecyclerView2.setAdapter(membershipAdapter);
     }
 
 
