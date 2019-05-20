@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -104,6 +103,7 @@ public class GymActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.review_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
+        //((LinearLayoutManager) mLayoutManager).setOrientation(LinearLayoutManager.HORIZONTAL);//가로로 보여주는거
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         ArrayList<reviewItem> reviewItemArrayList = new ArrayList<>();
@@ -111,10 +111,9 @@ public class GymActivity extends AppCompatActivity {
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "노의건", "좋네요", "2019/04/22"));
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "최낙범", "좋네요", "2019/04/12"));
 
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(reviewItemArrayList);
+        reviewAdapter reviewAdapter = new reviewAdapter(reviewItemArrayList);
 
-        mRecyclerView.setAdapter(recyclerAdapter);
-
+        mRecyclerView.setAdapter(reviewAdapter);
     }
 
 

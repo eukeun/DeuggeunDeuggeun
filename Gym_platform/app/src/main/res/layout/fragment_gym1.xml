@@ -18,9 +18,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이용상품"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
+                android:text="이용상품"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -36,19 +36,20 @@
                     android:layout_weight="1"
                     android:text="헬스"
                     android:textColor="#000000" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/circle_button"
-                    android:textColor="@drawable/clickabletext"
-                    android:text="1"/>
+                    android:text="1"
+                    android:textColor="@drawable/clickabletext" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,12 +57,13 @@
                     android:layout_weight="1"
                     android:text="1:1 PT"
                     android:textColor="#000000" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/circle_button"
-                    android:textColor="@drawable/clickabletext"
-                    android:text="6"/>
+                    android:text="6"
+                    android:textColor="@drawable/clickabletext" />
             </LinearLayout>
         </LinearLayout>
 
@@ -76,6 +78,30 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="PT 트레이닝"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="헬스"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="추천 멤버십"
                 android:textColor="#000000"
                 android:textSize="17dp"
                 android:textStyle="bold" />

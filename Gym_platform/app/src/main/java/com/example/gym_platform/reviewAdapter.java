@@ -8,10 +8,9 @@ import android.widget.TextView;
 import android.view.View;
 
 
-
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
+public class reviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ivPicture;
@@ -19,16 +18,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         TextView tvText;
         TextView tvDate;
 
-        MyViewHolder(View view){
+        MyViewHolder(View view) {
             super(view);
             ivPicture = view.findViewById(R.id.reviewUserProfile);
             tvName = view.findViewById(R.id.reviewUserName);
             tvText = view.findViewById(R.id.reviewText);
-            tvDate = view.findViewById(R.id.reviewDate);        }
+            tvDate = view.findViewById(R.id.reviewDate);
+        }
     }
 
     private ArrayList<reviewItem> reviewItemArrayList;
-    RecyclerAdapter(ArrayList<reviewItem> reviewItemArrayList){
+
+    reviewAdapter(ArrayList<reviewItem> reviewItemArrayList) {
         this.reviewItemArrayList = reviewItemArrayList;
     }
 
@@ -36,7 +37,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_review, parent, false);
-
         return new MyViewHolder(v);
     }
 

@@ -16,12 +16,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,7 +43,8 @@ public class NavigationActivity extends AppCompatActivity
 
     List<Drawable> temp;
     Button button;
-
+    RecyclerView mRecyclerView;
+    RecyclerView.LayoutManager mLayoutManager;
 
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -67,7 +71,7 @@ public class NavigationActivity extends AppCompatActivity
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
-                            nav_header_point_text.setText(document.get("userPoint").toString()+" 근");
+                            nav_header_point_text.setText(document.get("userPoint").toString() + " 근");
                             nav_header_id_text.setText(document.get("userName").toString());
 
                         } else {
@@ -116,14 +120,11 @@ public class NavigationActivity extends AppCompatActivity
         /////////////////////////////////////////////////////////////
 
 
-
-
-
-
         /////
 
 
         TextView tvg = (TextView) findViewById(R.id.gym);
+
         tvg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,8 +159,6 @@ public class NavigationActivity extends AppCompatActivity
         int dpValue = 16;
         float d = getResources().getDisplayMetrics().density;
         int margin = (int) (dpValue * d);
-
-
 
         ArrayList<Integer> listImage1 = new ArrayList<>();
         listImage1.add(R.drawable.aa);
@@ -205,9 +204,10 @@ public class NavigationActivity extends AppCompatActivity
 
 
         for (int i = 0; i < listImage2.size(); i++) {
-            ImageFragment1 imageFragment = new ImageFragment1();
+            ImageFragment2 imageFragment = new ImageFragment2();
             Bundle bundle = new Bundle();
             bundle.putInt("imgRes", listImage2.get(i));
+//            bundle.putInt("imgPosition", i);
             imageFragment.setArguments(bundle);
             fragmentAdapter2.addItem(imageFragment);
         }
@@ -230,13 +230,14 @@ public class NavigationActivity extends AppCompatActivity
 
 
         for (int i = 0; i < listImage3.size(); i++) {
-            ImageFragment1 imageFragment = new ImageFragment1();
+            ImageFragment3 imageFragment = new ImageFragment3();
             Bundle bundle = new Bundle();
             bundle.putInt("imgRes", listImage3.get(i));
             imageFragment.setArguments(bundle);
             fragmentAdapter3.addItem(imageFragment);
         }
         fragmentAdapter3.notifyDataSetChanged();
+
        /*
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -269,7 +270,7 @@ public class NavigationActivity extends AppCompatActivity
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
-                            nav_header_point_text.setText(document.get("userPoint").toString()+" 근");
+                            nav_header_point_text.setText(document.get("userPoint").toString() + " 근");
                             nav_header_id_text.setText(document.get("userName").toString());
                         } else {
                         }
