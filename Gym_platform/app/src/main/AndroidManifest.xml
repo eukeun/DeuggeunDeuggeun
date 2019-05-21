@@ -13,7 +13,10 @@
         android:label="득근득근"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        >
         <activity android:name=".HealthpayActivity"></activity>
         <activity android:name=".TrainerActivity" />
         <activity android:name=".PayActivity" />
