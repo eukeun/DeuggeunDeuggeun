@@ -32,6 +32,7 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".GymActivity" />
         <activity android:name=".ReservationListActivity" />
+        <activity android:name=".ChatActivity" />
     </application>
 
 </manifest>

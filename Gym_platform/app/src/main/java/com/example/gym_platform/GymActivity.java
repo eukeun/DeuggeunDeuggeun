@@ -131,6 +131,17 @@ public class GymActivity extends AppCompatActivity {
         membershipAdapter membershipAdapter = new membershipAdapter (membershipItemArrayList);
 
         mRecyclerView2.setAdapter(membershipAdapter);
+
+        //////////CHAT//////////////////////////////
+        Button chat_button = (Button) findViewById(R.id.btnMessage);
+        chat_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+        ///////////////////////////////////////////
     }
 
 
