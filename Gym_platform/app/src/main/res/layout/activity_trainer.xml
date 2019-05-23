@@ -112,13 +112,6 @@
 
                                 <include layout="@layout/fragment_trainer3" />
                             </ScrollView>
-                            <ScrollView
-                                android:id="@+id/tab4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <include layout="@layout/fragment_trainer4" />
-                            </ScrollView>
                         </FrameLayout>
                     </android.support.v4.widget.NestedScrollView>
                 </LinearLayout>

@@ -69,24 +69,19 @@ public class TrainerActivity extends AppCompatActivity {
         tab_host.setup();
 
         TabHost.TabSpec ts1 = tab_host.newTabSpec("tab1");
-        ts1.setIndicator("수업소개");
+        ts1.setIndicator("상품");
         ts1.setContent(R.id.tab1);
         tab_host.addTab(ts1);
 
         TabHost.TabSpec ts2 = tab_host.newTabSpec("tab2");
-        ts2.setIndicator("커리큘럼");
+        ts2.setIndicator("강사소개");
         ts2.setContent(R.id.tab2);
         tab_host.addTab(ts2);
 
         TabHost.TabSpec ts3 = tab_host.newTabSpec("tab3");
-        ts3.setIndicator("장소/시간");
+        ts3.setIndicator("리뷰");
         ts3.setContent(R.id.tab3);
         tab_host.addTab(ts3);
-
-        TabHost.TabSpec ts4 = tab_host.newTabSpec("tab4");
-        ts4.setIndicator("리뷰");
-        ts4.setContent(R.id.tab4);
-        tab_host.addTab(ts4);
 
         tab_host.setCurrentTab(0);
 
