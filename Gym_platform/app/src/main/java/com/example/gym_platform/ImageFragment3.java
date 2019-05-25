@@ -1,5 +1,6 @@
 package com.example.gym_platform;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,12 +19,10 @@ public class ImageFragment3 extends Fragment {
 
         ImageView imageView = view.findViewById(R.id.imageView3);
 
+        Bundle args = getArguments();
         if (getArguments() != null) {
-            Bundle args = getArguments();
-
             imageView.setImageResource(args.getInt("imgRes"));
         }
-
         return view;
     }
 }

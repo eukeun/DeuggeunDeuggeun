@@ -13,6 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,9 @@ import java.util.List;
 public class TrainerActivity extends AppCompatActivity {
 
     List<Drawable> temp;
+    RecyclerView mRecyclerView2;
+    RecyclerView.LayoutManager mLayoutManager2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +89,25 @@ public class TrainerActivity extends AppCompatActivity {
         tab_host.addTab(ts3);
 
         tab_host.setCurrentTab(0);
+
+        mRecyclerView2 = findViewById(R.id.membership_recycler_view);
+        mRecyclerView2.setHasFixedSize(true);
+        mLayoutManager2 = new LinearLayoutManager(this);
+        ((LinearLayoutManager) mLayoutManager2).setOrientation(LinearLayoutManager.HORIZONTAL);//가로로 보여주는거
+        mRecyclerView2.setLayoutManager(mLayoutManager2);
+
+        ArrayList<membershipItem> membershipItemArrayList = new ArrayList<>();
+        membershipItemArrayList.add(new membershipItem("1개월 - 7 pass", "1개월 / 7 pass", "34,300"));
+        membershipItemArrayList.add(new membershipItem("3개월 - 20 pass", "3개월 / 20 pass", "67,300"));
+        membershipItemArrayList.add(new membershipItem("6개월 - 40 pass", "6개월 / 40 pass", "95,300"));
+        membershipItemArrayList.add(new membershipItem("9개월 - 60 pass", "9개월 / 60 pass", "120,000"));
+        membershipItemArrayList.add(new membershipItem("12개월 - 80 pass", "12개월 / 80 pass", "150,000"));
+
+        membershipAdapter membershipAdapter = new membershipAdapter (membershipItemArrayList);
+
+        mRecyclerView2.setAdapter(membershipAdapter);
+
+
 
         //////////CHAT//////////////////////////////
         Button chat_button = (Button) findViewById(R.id.btnMessage);
