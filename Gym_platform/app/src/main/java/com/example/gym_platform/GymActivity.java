@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -20,7 +21,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +34,11 @@ public class GymActivity extends AppCompatActivity {
     List<Drawable> temp;
     RecyclerView mRecyclerView1, mRecyclerView2;
     RecyclerView.LayoutManager mLayoutManager1, mLayoutManager2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym);
-
 
         temp = new ArrayList<>();
         temp.add(ContextCompat.getDrawable(this, R.drawable.default_dot));
@@ -69,8 +72,43 @@ public class GymActivity extends AppCompatActivity {
         }
         fragmentAdapter1.notifyDataSetChanged();
 
+        //
 
-        Button used_gym = (Button)findViewById(R.id.btnCall);
+        LinearLayout mon_1 = (LinearLayout) findViewById(R.id.month_1);
+        LinearLayout mon_3 = (LinearLayout) findViewById(R.id.month_3);
+        LinearLayout mon_6 = (LinearLayout) findViewById(R.id.month_6);
+        LinearLayout mon_12 = (LinearLayout) findViewById(R.id.month_12);
+
+        mon_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, HealthpayActivity1.class);
+                startActivity(intent);
+            }
+        });
+        mon_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, HealthpayActivity3.class);
+                startActivity(intent);
+            }
+        });
+        mon_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, HealthpayActivity6.class);
+                startActivity(intent);
+            }
+        });
+        mon_12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, HealthpayActivity12.class);
+                startActivity(intent);
+            }
+        });
+
+        Button used_gym = (Button) findViewById(R.id.btnCall);
         used_gym.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +137,7 @@ public class GymActivity extends AppCompatActivity {
 
         tab_host.setCurrentTab(0);
 
+
         mRecyclerView1 = findViewById(R.id.review_recycler_view);
         mRecyclerView1.setHasFixedSize(true);
         mLayoutManager1 = new LinearLayoutManager(this);
@@ -112,6 +151,7 @@ public class GymActivity extends AppCompatActivity {
 
         reviewAdapter reviewAdapter = new reviewAdapter(reviewItemArrayList);
 
+        /*
         mRecyclerView1.setAdapter(reviewAdapter);
 
 
@@ -131,7 +171,7 @@ public class GymActivity extends AppCompatActivity {
         membershipAdapter membershipAdapter = new membershipAdapter (membershipItemArrayList);
 
         mRecyclerView2.setAdapter(membershipAdapter);
-
+        */
         //////////CHAT//////////////////////////////
         Button chat_button = (Button) findViewById(R.id.btnMessage);
         chat_button.setOnClickListener(new View.OnClickListener() {

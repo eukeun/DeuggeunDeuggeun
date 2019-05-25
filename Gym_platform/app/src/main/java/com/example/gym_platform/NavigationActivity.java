@@ -207,7 +207,7 @@ public class NavigationActivity extends AppCompatActivity
             ImageFragment2 imageFragment = new ImageFragment2();
             Bundle bundle = new Bundle();
             bundle.putInt("imgRes", listImage2.get(i));
-//            bundle.putInt("imgPosition", i);
+            //bundle.putInt("imgPosition", i);
             imageFragment.setArguments(bundle);
             fragmentAdapter2.addItem(imageFragment);
         }

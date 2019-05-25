@@ -24,8 +24,6 @@ public class ImageFragment2 extends Fragment {
             Bundle args = getArguments();
             imageView.setImageResource(args.getInt("imgRes"));
         }
-
-
         return view;
     }
 }

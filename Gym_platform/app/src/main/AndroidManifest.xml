@@ -9,14 +9,21 @@
 
     <application
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="득근득근"
-        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HealthpayActivity" />
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        >
+        <activity android:name=".HealthpayActivity"/>
+        <activity android:name=".HealthpayActivity1"/>
+        <activity android:name=".HealthpayActivity3"/>
+        <activity android:name=".HealthpayActivity6"/>
+        <activity android:name=".HealthpayActivity12"/>
         <activity android:name=".TrainerActivity" />
         <activity android:name=".PayActivity" />
         <activity android:name=".SplashActivity">
