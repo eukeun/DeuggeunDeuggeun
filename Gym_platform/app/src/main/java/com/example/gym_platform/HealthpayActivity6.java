@@ -1,10 +1,9 @@
 package com.example.gym_platform;
 
 import android.content.Intent;
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +25,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HealthpayActivity extends AppCompatActivity {
+public class HealthpayActivity6 extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
@@ -34,7 +33,7 @@ public class HealthpayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_healthpay_day);
+        setContentView(R.layout.activity_healthpay_mon6);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
@@ -49,16 +48,16 @@ public class HealthpayActivity extends AppCompatActivity {
 
 
 
-        Button btnPayReserve = (Button) findViewById(R.id.botton_day);
+        Button btnPayReserve = (Button) findViewById(R.id.botton_mon6);
         btnPayReserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String UID = currentUser.getEmail();
                 Date Ustart = new Date();
                 Calendar cal = Calendar.getInstance();
-                cal.add(cal.DAY_OF_MONTH,1);
+                cal.add(cal.MONTH,6);
                 Date Uend = cal.getTime();
-                String Ukind = "1일";
+                String Ukind = "6개월";
                 String type = "gym";
                 String Price = price.getText().toString();
                 String gymName = "451헬스클럽";
@@ -98,7 +97,7 @@ public class HealthpayActivity extends AppCompatActivity {
                     }
                 });
 
-        UsePoint(45); // 4,500원이므로 45근 삭감.
+        UsePoint(953); // 95,300원이므로 953근 삭감.
     }
 
     public void UsePoint(final int point) {
@@ -135,7 +134,7 @@ public class HealthpayActivity extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                         }
                                     });
-                            Intent intent = new Intent(HealthpayActivity.this, NavigationActivity.class);
+                            Intent intent = new Intent(HealthpayActivity6.this, NavigationActivity.class);
                             startActivity(intent);
                             finish();
 

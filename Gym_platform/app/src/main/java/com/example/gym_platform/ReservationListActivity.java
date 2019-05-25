@@ -17,9 +17,11 @@ public class ReservationListActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference ReservationRef = db.collection("Reservation");
-    private FirebaseAuth mAuth=FirebaseAuth.getInstance();;
-    private FirebaseUser currentUser=mAuth.getCurrentUser();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    ;
+    private FirebaseUser currentUser = mAuth.getCurrentUser();
     private ReservationAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,10 @@ public class ReservationListActivity extends AppCompatActivity {
 
         setUpRecyclerView();
     }
-    private void setUpRecyclerView(){
-        Query query = ReservationRef.whereEqualTo("userUID",currentUser.getUid());
-        FirestoreRecyclerOptions<Reservation> options = new FirestoreRecyclerOptions.Builder<Reservation>().setQuery(query,Reservation.class).build();
+
+    private void setUpRecyclerView() {
+        Query query = ReservationRef.whereEqualTo("userUID", currentUser.getUid());
+        FirestoreRecyclerOptions<Reservation> options = new FirestoreRecyclerOptions.Builder<Reservation>().setQuery(query, Reservation.class).build();
 
         adapter = new ReservationAdapter(options);
 
