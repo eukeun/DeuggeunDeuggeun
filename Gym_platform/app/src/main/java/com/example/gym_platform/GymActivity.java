@@ -117,6 +117,15 @@ public class GymActivity extends AppCompatActivity {
             }
         });
 
+        Button review = (Button)findViewById(R.id.writereview);
+        review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GymActivity.this, ReviewActivity.class);
+                startActivity(intent);
+            }
+        });
+
         TabHost tab_host = (TabHost) findViewById(R.id.tabhost);
         tab_host.setup();
 
@@ -151,9 +160,9 @@ public class GymActivity extends AppCompatActivity {
 
         reviewAdapter reviewAdapter = new reviewAdapter(reviewItemArrayList);
 
-        /*
-        mRecyclerView1.setAdapter(reviewAdapter);
 
+        mRecyclerView1.setAdapter(reviewAdapter);
+/*
 
         mRecyclerView2 = findViewById(R.id.membership_recycler_view);
         mRecyclerView2.setHasFixedSize(true);

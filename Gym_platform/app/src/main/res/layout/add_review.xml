@@ -120,13 +120,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_marginLeft="22dp"
+        <EditText
+            android:layout_margin="22dp"
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="리뷰를 남겨주세요." />
+            android:hint="리뷰를 남겨주세요."
+            android:inputType="textMultiLine"/>
     </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

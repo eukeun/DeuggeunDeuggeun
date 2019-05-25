@@ -15,15 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HealthpayActivity" />
-        android:theme="@style/AppTheme"
-        android:largeHeap="true"
-        android:hardwareAccelerated="false"
-        >
-        <activity android:name=".HealthpayActivity"/>
-        <activity android:name=".HealthpayActivity1"/>
-        <activity android:name=".HealthpayActivity3"/>
-        <activity android:name=".HealthpayActivity6"/>
-        <activity android:name=".HealthpayActivity12"/>
+        <activity android:name=".HealthpayActivity1" />
+        <activity android:name=".HealthpayActivity3" />
+        <activity android:name=".HealthpayActivity6" />
+        <activity android:name=".HealthpayActivity12" />
         <activity android:name=".TrainerActivity" />
         <activity android:name=".PayActivity" />
         <activity android:name=".SplashActivity">
@@ -42,6 +37,7 @@
         <activity android:name=".GymActivity" />
         <activity android:name=".ReservationListActivity" />
         <activity android:name=".ChatActivity" />
+        <activity android:name=".ReviewActivity" />
     </application>
 
 </manifest>

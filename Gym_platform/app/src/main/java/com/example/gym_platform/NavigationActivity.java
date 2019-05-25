@@ -271,7 +271,7 @@ public class NavigationActivity extends AppCompatActivity
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
                             nav_header_point_text.setText(document.get("userPoint").toString() + " 근");
-                            nav_header_id_text.setText(document.get("userName").toString());
+                            nav_header_id_text.setText(document.get("userName").toString()+"님");
                         } else {
                         }
                     } else {
