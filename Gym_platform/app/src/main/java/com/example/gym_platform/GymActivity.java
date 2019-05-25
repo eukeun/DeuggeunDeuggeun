@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -73,10 +74,10 @@ public class GymActivity extends AppCompatActivity {
 
         //
 
-        TextView mon_1 = (TextView) findViewById(R.id.month_1);
-        TextView mon_3 = (TextView) findViewById(R.id.month_3);
-        TextView mon_6 = (TextView) findViewById(R.id.month_6);
-        TextView mon_12 = (TextView) findViewById(R.id.month_12);
+        LinearLayout mon_1 = (LinearLayout) findViewById(R.id.month_1);
+        LinearLayout mon_3 = (LinearLayout) findViewById(R.id.month_3);
+        LinearLayout mon_6 = (LinearLayout) findViewById(R.id.month_6);
+        LinearLayout mon_12 = (LinearLayout) findViewById(R.id.month_12);
 
         mon_1.setOnClickListener(new View.OnClickListener() {
             @Override
