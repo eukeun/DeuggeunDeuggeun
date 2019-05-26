@@ -8,6 +8,6 @@ public class ReviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_g_review);
+        setContentView(R.layout.add_review);
     }
 }

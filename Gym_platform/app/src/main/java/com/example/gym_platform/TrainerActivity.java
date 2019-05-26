@@ -108,14 +108,6 @@ public class TrainerActivity extends AppCompatActivity {
         mRecyclerView2.setAdapter(membershipAdapter);
 
 
-        Button writereview_t = (Button)findViewById(R.id.writereview_t);
-        writereview_t.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrainerActivity.this, T_reviewActivity.class);
-                startActivity(intent);
-            }
-        });
 
         //////////CHAT//////////////////////////////
         Button chat_button = (Button) findViewById(R.id.btnMessage);

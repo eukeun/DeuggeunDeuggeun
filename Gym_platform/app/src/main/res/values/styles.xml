@@ -26,9 +26,5 @@
 
         <item name="colorAccent">#FFFFFF</item>
     </style>
-    <style name="RatingBar" parent="Theme.AppCompat">
-        <item name="colorControlNormal">#FFE400</item>
-        <item name="colorControlActivated">#FFE400</item>
-    </style>
 
 </resources>
