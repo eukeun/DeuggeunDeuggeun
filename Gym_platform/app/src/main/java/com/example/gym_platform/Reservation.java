@@ -10,12 +10,12 @@ public class Reservation {
     private String userUID;
     private Date start;
     private Date end;
-    private int price;
+    private String price;
 
     public Reservation() {
     }
 
-    public Reservation(String content, String gymName, String id,String type,String userUID,Date start,Date end,int price) {
+    public Reservation(String content, String gymName, String id,String type,String userUID,Date start,Date end,String price) {
        this.content = content;
        this.gymName=gymName;
        this.id=id;
@@ -82,11 +82,11 @@ public class Reservation {
         this.end = end;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

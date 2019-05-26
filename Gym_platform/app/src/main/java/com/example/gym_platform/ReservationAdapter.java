@@ -2,6 +2,7 @@ package com.example.gym_platform;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,6 @@ import java.text.SimpleDateFormat;
 
 public class ReservationAdapter extends FirestoreRecyclerAdapter<Reservation,ReservationAdapter.ReservationHolder> {
 
-    /**
-     * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
-     * FirestoreRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
     public ReservationAdapter(@NonNull FirestoreRecyclerOptions<Reservation> options) {
         super(options);
     }
@@ -27,12 +22,14 @@ public class ReservationAdapter extends FirestoreRecyclerAdapter<Reservation,Res
     @Override
     protected void onBindViewHolder(@NonNull ReservationHolder holder, int position, @NonNull Reservation model) {
         SimpleDateFormat printdate = new SimpleDateFormat("yy년 MM월 dd일");
+        Log.d("ReservationAdapter","진입2");
         holder.textViewgymName.setText(model.getGymName());
         holder.textViewcontent.setText(model.getContent());
         holder.textViewtype.setText(model.getType());
         holder.textViewstart.setText(String.valueOf(printdate.format(model.getStart())));
         holder.textViewend .setText(String.valueOf(printdate.format(model.getEnd())));
-        holder.textViewprice.setText(String.valueOf(model.getPrice()));
+        holder.textViewprice.setText(model.getPrice());
+
     }
 
     @NonNull
