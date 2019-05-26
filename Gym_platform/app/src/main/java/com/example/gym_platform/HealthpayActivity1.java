@@ -52,7 +52,7 @@ public class HealthpayActivity1 extends AppCompatActivity {
         btnPayReserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String UID = currentUser.getEmail();
+                String UID = currentUser.getUid();
                 Date Ustart = new Date();
                 Calendar cal = Calendar.getInstance();
                 cal.add(cal.MONTH,1);
