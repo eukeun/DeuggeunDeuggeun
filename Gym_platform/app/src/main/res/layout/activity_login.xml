@@ -46,7 +46,7 @@
             android:fontFamily="@font/jung120"
             android:textColor="#1F1F1F"
             android:hint="Password"
-            android:inputType="비밀번호"/>
+            android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
