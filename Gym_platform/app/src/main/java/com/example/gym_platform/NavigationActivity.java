@@ -189,9 +189,9 @@ public class NavigationActivity extends AppCompatActivity
 
 
         ArrayList<Integer> listImage2 = new ArrayList<>();
-        listImage2.add(R.drawable.a);
-        listImage2.add(R.drawable.b);
-        listImage2.add(R.drawable.c);
+        listImage2.add(R.drawable.gym1);
+        listImage2.add(R.drawable.gym2);
+        listImage2.add(R.drawable.gym3);
 
         ViewPager viewPager2 = findViewById(R.id.viewpager2);
         FragmentAdapter fragmentAdapter2 = new FragmentAdapter(getSupportFragmentManager());
