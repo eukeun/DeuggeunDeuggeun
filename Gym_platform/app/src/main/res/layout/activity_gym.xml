@@ -55,6 +55,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:background="#ffffff"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -64,7 +65,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -81,7 +83,8 @@
                 <TabWidget
                     android:id="@android:id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -143,6 +146,7 @@
         android:id="@+id/layoutBottomButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ffffff"
         android:layout_alignParentBottom="true"
         android:orientation="vertical">
 
@@ -167,7 +171,6 @@
                 android:layout_width="357px"
                 android:layout_height="186px"
                 android:layout_marginRight="63px"
-
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button"
                 android:text="실시간 톡"

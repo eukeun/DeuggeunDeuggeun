@@ -2,18 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="22dp">
+        android:padding="22dp"
+        android:background="#ffffff">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#ffffff">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,19 +26,22 @@
                 android:text="이용상품"
                 android:textColor="#000000"
                 android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="#ffffff"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="20dp"
+                android:background="#ffffff">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="헬스"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:background="#ffffff"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -49,14 +55,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="1:1 PT"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:background="#ffffff"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -65,36 +73,36 @@
                     android:text="6"
                     android:textColor="@drawable/clickabletext" />
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="PT 트레이닝"
-                android:textColor="#000000"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:text="헬스"
-                android:textColor="#000000" />
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="그룹 PT"
+                    android:textColor="#000000"
+                    android:background="#ffffff"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_button"
+                    android:text="4"
+                    android:textColor="@drawable/clickabletext" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#ffffff">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,13 +112,15 @@
                 android:text="추천 멤버십"
                 android:textColor="#000000"
                 android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="#ffffff"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#ffffff">
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -118,14 +128,14 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
 
                     <LinearLayout
                         android:id="@+id/month_1"
                         android:layout_width="140dp"
                         android:layout_height="200dp"
                         android:layout_margin="10dp"
-                        android:background="#FAFAFA"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -149,6 +159,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="#F6F6F6"
                             android:orientation="vertical">
 
                             <TextView
@@ -202,6 +213,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="#F6F6F6"
                             android:orientation="vertical">
 
                             <TextView
@@ -255,6 +267,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="#F6F6F6"
                             android:orientation="vertical">
 
                             <TextView
@@ -308,6 +321,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="#F6F6F6"
                             android:orientation="vertical">
 
                             <TextView
