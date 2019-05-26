@@ -3,87 +3,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".NavigationActivity"
-    android:background="#ffffff"
     tools:showIn="@layout/app_bar_navigation">
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:minHeight="?attr/actionBarSize" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="득근 득근"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager1"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tab_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/viewpager1"
-                    android:layout_alignBottom="@+id/viewpager1"
-                    android:paddingRight="15dp"
-                    app:tabBackground="@drawable/tab_selector"
-                    app:tabGravity="center"
-                    app:tabIndicatorHeight="0dp" />
-            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/gym"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="내 주변 추천 헬스장"/>
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager2"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="270dp" />
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/trainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:textColor="#000000"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="내 주변 추천 트레이너"
- />
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp" />
 
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager3"
-                    android:layout_width="match_parent"
-                    android:layout_height="270dp" />
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/viewpager1"
+                        android:layout_alignBottom="@+id/viewpager1"
+                        android:paddingRight="15dp"
+                        app:tabBackground="@drawable/tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp" />
+                </RelativeLayout>
 
-
-                <SearchView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:background="#D5D5D5" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/gym"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="내 주변 추천 헬스장"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="270dp"
+                        android:layout_marginBottom="50dp" />
+
+                    <TextView
+                        android:id="@+id/trainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="내 주변 추천 트레이너"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager3"
+                        android:layout_width="match_parent"
+                        android:layout_height="270dp" />
+
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:background="#D5D5D5" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

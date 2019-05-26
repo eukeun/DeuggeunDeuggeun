@@ -65,18 +65,21 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ffffff">
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:minHeight="?attr/actionBarSize" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="역곡 헬스장"
+                        android:text="바운싱 휘트니스"
                         android:textColor="#000000"
-                        android:textSize="20dp"
+                        android:textSize="17dp"
                         android:textStyle="bold" />
                 </RelativeLayout>
 
@@ -84,7 +87,7 @@
                     android:id="@android:id/tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#ffffff"/>
+                    android:background="#ffffff" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -146,8 +149,8 @@
         android:id="@+id/layoutBottomButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
         android:layout_alignParentBottom="true"
+        android:background="#ffffff"
         android:orientation="vertical">
 
         <LinearLayout

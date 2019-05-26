@@ -161,9 +161,9 @@ public class NavigationActivity extends AppCompatActivity
         int margin = (int) (dpValue * d);
 
         ArrayList<Integer> listImage1 = new ArrayList<>();
-        listImage1.add(R.drawable.aa);
-        listImage1.add(R.drawable.bb);
-        listImage1.add(R.drawable.cc);
+        listImage1.add(R.drawable.ad1);
+        listImage1.add(R.drawable.ad2);
+        listImage1.add(R.drawable.ad3);
 
         ViewPager viewPager1 = findViewById(R.id.viewpager1);
         FragmentAdapter fragmentAdapter1 = new FragmentAdapter(getSupportFragmentManager());
