@@ -20,4 +20,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="underline">
+        <u>할인쿠폰을 사용하시겠어요?</u>.
+    </string>
+
 </resources>
