@@ -215,9 +215,9 @@ public class NavigationActivity extends AppCompatActivity
 
 
         ArrayList<Integer> listImage3 = new ArrayList<>();
-        listImage3.add(R.drawable.d);
-        listImage3.add(R.drawable.e);
-        listImage3.add(R.drawable.f);
+        listImage3.add(R.drawable.trainer1);
+        listImage3.add(R.drawable.trainer2);
+        listImage3.add(R.drawable.trainer3);
 
         ViewPager viewPager3 = findViewById(R.id.viewpager3);
         FragmentAdapter fragmentAdapter3 = new FragmentAdapter(getSupportFragmentManager());
