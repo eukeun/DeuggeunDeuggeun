@@ -24,9 +24,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="이용상품"
+                android:fontFamily="@font/jung160"
                 android:textColor="#000000"
-                android:textSize="17dp"
-                android:textStyle="bold"
+                android:textSize="19dp"
+
                 android:background="#ffffff"/>
 
             <LinearLayout
@@ -40,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="헬스"
+                    android:fontFamily="@font/jung120"
                     android:textColor="#000000"
                     android:background="#ffffff"/>
 
@@ -63,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="1:1 PT"
+                    android:fontFamily="@font/jung120"
                     android:textColor="#000000"
                     android:background="#ffffff"/>
 
@@ -86,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="그룹 PT"
+                    android:fontFamily="@font/jung120"
                     android:textColor="#000000"
                     android:background="#ffffff"/>
 
@@ -110,9 +114,9 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="추천 멤버십"
+                android:fontFamily="@font/jung160"
                 android:textColor="#000000"
-                android:textSize="17dp"
-                android:textStyle="bold"
+                android:textSize="19dp"
                 android:background="#ffffff"/>
         </LinearLayout>
 
@@ -150,6 +154,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="20dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="1개월 - 7 pass"
                                 android:textColor="#ffffff"
                                 android:textSize="16dp"
@@ -167,6 +172,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="1개월 / 7 pass"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -177,6 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="\34,300"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -204,6 +211,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="20dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="3개월 - 20 pass"
                                 android:textColor="#ffffff"
                                 android:textSize="16dp"
@@ -221,6 +229,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="3개월 / 20 pass"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -231,6 +240,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="\67,300"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -258,6 +268,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="20dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="6개월 - 40 pass"
                                 android:textColor="#ffffff"
                                 android:textSize="16dp"
@@ -275,6 +286,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="6개월 / 40 pass"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -285,6 +297,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="\95,300"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
@@ -312,7 +325,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="20dp"
-                                android:text="12개월 - 80 pass"
+                                android:fontFamily="@font/jung120"
+                                android:text="12개월 - 80pass"
                                 android:textColor="#ffffff"
                                 android:textSize="16dp"
                                 android:textStyle="bold" />
@@ -329,7 +343,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
-                                android:text="12개월 / 80 pass"
+                                android:fontFamily="@font/jung120"
+                                android:text="12개월 / 80pass"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"
                                 android:textStyle="bold" />
@@ -339,6 +354,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginBottom="10dp"
+                                android:fontFamily="@font/jung120"
                                 android:text="\150,000"
                                 android:textColor="#3a3a3a"
                                 android:textSize="16dp"

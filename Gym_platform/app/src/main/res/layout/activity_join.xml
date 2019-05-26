@@ -6,6 +6,7 @@
     android:background="#ffffff"
     android:orientation="vertical"
     android:weightSum="100"
+    android:layout_marginBottom="220dp"
     >
 
     <RelativeLayout
@@ -16,7 +17,7 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:background="#FFFFFF"
             android:minHeight="?attr/actionBarSize" />
 
@@ -98,9 +99,9 @@
     <Button
         android:id="@+id/Button_Joinsubmit"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="420dp"
+
         android:layout_marginRight="22dp"
         android:background="@drawable/button"
         android:fontFamily="@font/jung150"

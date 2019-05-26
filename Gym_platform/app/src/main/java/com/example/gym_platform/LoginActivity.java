@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -55,8 +56,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         //  Log.d("a","LoginActivity 실행//2");
         final EditText EditText_email = (EditText) findViewById(R.id.EditText_Email);
         final EditText EditText_password = (EditText) findViewById(R.id.EditText_password);
-        ImageView JoinButton = (ImageView) findViewById(R.id.Button_Join);
-        ImageView LoginButton = (ImageView) findViewById(R.id.Button_Login);
+        Button JoinButton = (Button) findViewById(R.id.Button_Join);
+        Button LoginButton = (Button) findViewById(R.id.Button_Login);
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override

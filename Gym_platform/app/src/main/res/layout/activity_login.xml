@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:weightSum="100"
-    android:background="@drawable/background">
+    android:weightSum="100">
 
     <ImageView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:paddingLeft="30dp"
         android:padding="30dp"
+        android:paddingLeft="30dp"
         app:srcCompat="@drawable/login_img" />
 
     <android.support.design.widget.TextInputLayout
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="E-mail" />
+            android:hint="이메일" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -41,30 +41,41 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Password"
-            android:inputType="textPassword"/>
+            android:hint="비밀번호"
+            android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
 
-        <ImageView
+
+        <Button
             android:id="@+id/Button_Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/login_btn" />
-
-        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/jung160"
+            android:textColor="@drawable/clickabletext"
+            android:textSize="20dp"
+            android:text="로그인"/>
+        <Button
             android:id="@+id/Button_Join"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/join_btn" />
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/jung160"
+            android:textColor="@drawable/clickabletext"
+            android:textSize="20dp"
+            android:text="회원가입"/>
     </LinearLayout>
 
     <com.google.android.gms.common.SignInButton
