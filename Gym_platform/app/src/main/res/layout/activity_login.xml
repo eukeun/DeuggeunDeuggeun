@@ -11,8 +11,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:paddingLeft="22dp"
+        android:layout_marginTop="150dp"
+        android:paddingLeft="30dp"
         android:padding="30dp"
         app:srcCompat="@drawable/login_img" />
 
@@ -25,11 +25,9 @@
             android:id="@+id/EditText_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:fontFamily="@font/jung120"
-            android:textColor="#1F1F1F"
-            android:layout_marginRight="22dp"
-            android:hint="이메일" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="E-mail" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -41,64 +39,38 @@
             android:id="@+id/EditText_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:fontFamily="@font/jung120"
-            android:textColor="#1F1F1F"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:hint="Password"
             android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp">
-        <Button
 
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
+        <ImageView
             android:id="@+id/Button_Login"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="30dp"
-            android:textSize="20dp"
-            android:fontFamily="@font/jung160"
-            android:text="로그인"
-            android:background="@drawable/button"
-            android:textColor="@drawable/clickabletext"
-            />
-        <TextView
-            android:layout_marginTop="13dp"
-            android:layout_marginBottom="13dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="#000000"
-            android:text="또는"
-            android:layout_marginLeft="190dp"/>
-        <Button
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/login_btn" />
+
+        <ImageView
             android:id="@+id/Button_Join"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-
-            android:textSize="20dp"
-            android:fontFamily="@font/jung160"
-            android:text="회원가입"
-            android:background="@drawable/button"
-            android:textColor="@drawable/clickabletext"
-            />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/join_btn" />
     </LinearLayout>
 
     <com.google.android.gms.common.SignInButton
-        android:layout_marginLeft="22dp"
-        android:layout_marginRight="22dp"
-        android:background="@drawable/googlejoin"
         android:id="@+id/SigninButton_glogin"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
     </com.google.android.gms.common.SignInButton>

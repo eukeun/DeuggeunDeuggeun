@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    android:layout_marginBottom="22dp"
 
     >
     <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -16,7 +15,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:background="#FFFFFF"
         android:minHeight="?attr/actionBarSize" />
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -96,10 +95,9 @@
         android:layout_marginRight="22dp"
         android:id="@+id/Button_Joinsubmit"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="60dp"
+        android:layout_marginTop="420dp"
         android:textSize="20dp"
-        android:layout_marginTop="400dp"
         android:fontFamily="@font/jung150"
         android:text="회원가입"
         android:background="@drawable/button"

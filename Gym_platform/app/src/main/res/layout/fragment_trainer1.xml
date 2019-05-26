@@ -22,8 +22,8 @@
                 android:layout_marginBottom="20dp"
                 android:text="이용상품"
                 android:textColor="#000000"
-                android:textSize="19dp"
-                android:fontFamily="@font/jung160"/>
+                android:textSize="17dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,9 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="헬스"
-                    android:textColor="#000000"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/jung120"/>
+                    android:textColor="#000000" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -57,9 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/jung120"
-                    android:text="1 : 1  PT"
+                    android:text="1:1 PT"
                     android:textColor="#000000" />
 
                 <Button
@@ -83,8 +79,8 @@
                 android:layout_marginBottom="20dp"
                 android:text="PT 트레이닝"
                 android:textColor="#000000"
-                android:textSize="19dp"
-                android:fontFamily="@font/jung160" />
+                android:textSize="17dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,8 +103,8 @@
                 android:layout_marginBottom="20dp"
                 android:text="추천 멤버십"
                 android:textColor="#000000"
-                android:textSize="19dp"
-                android:fontFamily="@font/jung160" />
+                android:textSize="17dp"
+                android:textStyle="bold" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/membership_recycler_view"
