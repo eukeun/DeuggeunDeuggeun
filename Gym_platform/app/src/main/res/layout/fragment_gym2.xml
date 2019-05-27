@@ -267,7 +267,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/jung120"
-                android:text="서울특별시 양천구 목동서로 40 양지빌딩"
+                android:text="경기도 부천시 원미구 심곡동 00-00"
                 android:textColor="#000000"
                 android:textSize="16dp" />/>
 
@@ -299,7 +299,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/jung150"
-                android:text="신목동역에서 1km"
+                android:text="ㅇㅇ역에서 1km"
                 android:textColor="#000000"
                 android:textSize="16dp" />/>
 

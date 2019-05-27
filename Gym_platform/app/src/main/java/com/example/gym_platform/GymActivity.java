@@ -55,9 +55,10 @@ public class GymActivity extends AppCompatActivity {
 
 
         ArrayList<Integer> listImage1 = new ArrayList<>();
-        listImage1.add(R.drawable.aaa);
-        listImage1.add(R.drawable.bbb);
-        listImage1.add(R.drawable.ccc);
+        listImage1.add(R.drawable.gym11);
+        listImage1.add(R.drawable.gym22);
+        listImage1.add(R.drawable.gym33);
+        listImage1.add(R.drawable.gym44);
 
         ViewPager viewPager1 = findViewById(R.id.viewpager1);
         FragmentAdapter fragmentAdapter1 = new FragmentAdapter(getSupportFragmentManager());
@@ -71,6 +72,8 @@ public class GymActivity extends AppCompatActivity {
             fragmentAdapter1.addItem(imageFragment);
         }
         fragmentAdapter1.notifyDataSetChanged();
+
+
 
         //
 
@@ -157,6 +160,7 @@ public class GymActivity extends AppCompatActivity {
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "강상우", "좋네요", "2019/05/12"));
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "노의건", "좋네요", "2019/04/22"));
         reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "최낙범", "좋네요", "2019/04/12"));
+        reviewItemArrayList.add(new reviewItem(R.drawable.user_1, "라지수 ", "좋네요", "2019/04/02"));
 
         reviewAdapter reviewAdapter = new reviewAdapter(reviewItemArrayList);
 
