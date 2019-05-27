@@ -62,40 +62,43 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="14dp"
                 android:fontFamily="@font/jung120"
                 android:text="샤워실"
                 android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="14dp"
                 android:fontFamily="@font/jung120"
                 android:paddingLeft="14dp"
                 android:text="주차"
                 android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="14dp"
                 android:fontFamily="@font/jung120"
-                android:paddingLeft="12dp"
+                android:paddingLeft="29dp"
                 android:text="탈의실"
                 android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="22dp"
+
+                android:paddingLeft="5dp"
                 android:fontFamily="@font/jung120"
                 android:text="일일락커"
                 android:textColor="#000000"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
         </LinearLayout>
 
         <TextView
@@ -123,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="16dp"
                 android:fontFamily="@font/jung120"
                 android:text="운동화, 운동복 개인 지참 필수"
 
@@ -158,10 +161,10 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="90dp"
                 android:background="@drawable/button"
-                android:fontFamily="@font/jung120"
+                android:fontFamily="@font/jung160"
                 android:text="전화하기"
                 android:textColor="@drawable/clickabletext"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
 
         </LinearLayout>
 
@@ -269,7 +272,7 @@
                 android:fontFamily="@font/jung120"
                 android:text="경기도 부천시 원미구 심곡동 00-00"
                 android:textColor="#000000"
-                android:textSize="16dp" />/>
+                 />/>
 
         </LinearLayout>
 
