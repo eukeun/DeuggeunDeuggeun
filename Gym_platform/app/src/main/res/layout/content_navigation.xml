@@ -19,7 +19,7 @@
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:minHeight="?attr/actionBarSize" />
 
@@ -27,10 +27,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/thejung150"
                 android:text="득근 득근"
                 android:textColor="#000000"
-                android:textSize="19dp"
-                android:textStyle="bold|italic" />
+                android:textSize="19dp" />
         </RelativeLayout>
 
         <ScrollView
@@ -52,16 +52,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dp" />
 
-                    <android.support.design.widget.TabLayout
-                        android:id="@+id/tab_layout"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignRight="@+id/viewpager1"
-                        android:layout_alignBottom="@+id/viewpager1"
-                        android:paddingRight="15dp"
-                        app:tabBackground="@drawable/tab_selector"
-                        app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp" />
+                        android:layout_alignBottom="@+id/viewpager1">
+
+                        <android.support.design.widget.TabLayout
+                            android:id="@+id/tab_layout"
+                            android:layout_width="70dp"
+                            android:layout_height="30dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/button1"
+                            app:tabBackground="@drawable/tab_selector"
+                            app:tabGravity="center"
+                            app:tabIndicatorHeight="0dp" />
+
+                    </RelativeLayout>
                 </RelativeLayout>
 
                 <LinearLayout
@@ -89,7 +96,9 @@
                         android:id="@+id/trainer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:text="내 주변 추천 트레이너"
                         android:textColor="#000000"
                         android:textSize="20dp"

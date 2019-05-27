@@ -66,21 +66,19 @@
 
 
             <ImageView
-                android:padding="20dp"
+
                 android:id="@+id/ImageButton_point"
                 android:layout_width="394px"
                 android:layout_height="394px"
                 app:srcCompat="@drawable/point" />
 
             <ImageView
-                android:padding="20dp"
                 android:layout_width="394px"
                 android:layout_height="394px"
 
                 app:srcCompat="@drawable/wish" />
 
             <ImageView
-                android:padding="20dp"
                 android:layout_width="394px"
                 android:layout_height="394px"
 
