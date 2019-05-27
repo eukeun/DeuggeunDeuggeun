@@ -13,7 +13,7 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/button"
             android:text="리뷰 작성"
@@ -81,7 +81,7 @@
                 android:text="시설 접근성"
                 android:textColor="#000000"
                 android:fontFamily="@font/jung150"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RatingBar
                 android:id="@+id/ratingBar1"
@@ -106,7 +106,7 @@
                 android:text="시설 상태"
                 android:textColor="#000000"
                 android:fontFamily="@font/jung150"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RatingBar
                 android:id="@+id/ratingBar2"
@@ -131,7 +131,7 @@
                 android:text="시설 청결도"
                 android:textColor="#000000"
                 android:fontFamily="@font/jung150"
-                android:textSize="17dp" />
+                android:textSize="15dp" />
 
             <RatingBar
                 android:id="@+id/ratingBar3"
