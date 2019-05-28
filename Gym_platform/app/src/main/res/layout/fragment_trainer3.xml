@@ -14,7 +14,7 @@
         <Button
             android:id="@+id/writereview_t"
             android:layout_width="300dp"
-            android:layout_height="90dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
             android:background="@drawable/button"
             android:text="리뷰 작성"

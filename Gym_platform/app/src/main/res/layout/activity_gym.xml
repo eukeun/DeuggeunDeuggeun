@@ -167,6 +167,8 @@
                 android:layout_marginRight="54px"
                 android:background="@drawable/button"
                 android:text="헬스장 이용하기"
+                android:fontFamily="@font/jung160"
+                android:textSize="16dp"
                 android:textColor="@drawable/clickabletext" />
 
             <Button
@@ -177,6 +179,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button"
                 android:text="실시간 톡"
+                android:fontFamily="@font/jung160"
+                android:textSize="16dp"
                 android:textColor="@drawable/clickabletext" />
 
 

@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
+
+
         <LinearLayout
             android:id="@+id/cd1"
             android:layout_width="wrap_content"
@@ -212,7 +214,18 @@
                 android:layout_marginLeft="15dp"
                 android:text="득근"
                 android:textColor="#000000" />
-        </LinearLayout>
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="230dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="오늘은 다른 헬스장을 이용하시겠어요?"
+
+                ></TextView></LinearLayout>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

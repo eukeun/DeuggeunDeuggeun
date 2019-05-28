@@ -54,20 +54,24 @@
 
         <Button
             android:id="@+id/Button_Login"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/button"
-            android:fontFamily="@font/jung160"
             android:textColor="@drawable/clickabletext"
+            android:fontFamily="@font/jung160"
+
             android:textSize="20dp"
-            android:text="로그인"/>
+            android:text="로그인"
+            />
         <Button
             android:id="@+id/Button_Join"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
@@ -85,5 +89,6 @@
         android:layout_gravity="center_horizontal">
 
     </com.google.android.gms.common.SignInButton>
+
 
 </LinearLayout>
