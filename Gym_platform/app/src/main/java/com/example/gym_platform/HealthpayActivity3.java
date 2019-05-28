@@ -60,7 +60,7 @@ public class HealthpayActivity3 extends AppCompatActivity {
                 String Ukind = "3개월";
                 String type = "gym";
                 String Price = price.getText().toString();
-                String gymName = "451헬스클럽";
+                String gymName = "리앤리 피트니스";
                 addDocument(UID,Ustart,Uend,Ukind, Price, gymName, type);
 
             }
