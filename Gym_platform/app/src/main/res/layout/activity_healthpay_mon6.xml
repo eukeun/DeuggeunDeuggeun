@@ -119,7 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jung120"
-                        android:text="2019년 5월 17일 (금)"
+                        android:text="2019년 5월 28일 (화)"
                         android:textColor="#000000"
                         android:textSize="16dp" />
 
@@ -183,7 +183,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/jung120"
-                        android:text="2019년 5월 17일 (금)"
+                        android:text="2019년 5월 28일 (화)"
                         android:textColor="#000000"
                         android:textSize="16dp" />
 
@@ -203,7 +203,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/jung120"
-                        android:text="2019년 8월 15일 (목)"
+                        android:text="2019년 11월 27일 (수)"
                         android:textColor="#000000"
                         android:textSize="16dp" />
 
